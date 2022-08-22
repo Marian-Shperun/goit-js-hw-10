@@ -1,6 +1,6 @@
 import './css/styles.css';
 import { fetchCountries } from './fetchCountries.js';
-import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import { Notify } from 'notiflix';
 import debounce from 'lodash.debounce';
 
 const inputEl = document.querySelector('input#search-box');
@@ -33,8 +33,6 @@ function startSearch() {
 
   fetchCountries(velueInput, filteredParameters.join())
     .then(countries => {
-      console.log(countries.length);
-
       if (countries.length > 10) {
         return Notify.info(
           'Too many matches found. Please enter a more specific name.'
@@ -99,6 +97,7 @@ function clearingMarkup() {
 function loaderOn() {
   loader.classList.add('visible');
 }
+
 function loaderOff() {
   loader.classList.remove('visible');
 }
