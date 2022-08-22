@@ -18,3 +18,18 @@ body {
   max-width: 320px;
   margin-bottom: 16px;
 }
+ul {
+  list-style: none;
+}
+
+h3 {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.loader {
+  display: none;
+}
+.visible {
+  display: block;
+}
